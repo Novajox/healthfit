@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_normal">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_normal"
+            android:text="Nouvelles données"
+            android:textSize="30sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/newRecordTotalMass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Poids (kg)"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/newRecordMuscleMass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masse musculaire (en %)"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/newRecordFatMass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masse graisseuse (en %)"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/newRecordWaterMass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Masse d'eau (en %)"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/newRecordValidateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Valider"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name=".home.HomeActivity">
+        <activity android:name="novajox.io.healthfit.view.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

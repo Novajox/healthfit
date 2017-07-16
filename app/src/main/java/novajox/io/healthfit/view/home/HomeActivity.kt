@@ -1,4 +1,4 @@
-package novajox.io.healthfit.home
+package novajox.io.healthfit.view.home
 
 import android.os.Bundle
 import novajox.io.healthfit.R
