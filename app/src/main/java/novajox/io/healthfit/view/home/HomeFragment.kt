@@ -10,7 +10,6 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.raizlabs.android.dbflow.kotlinextensions.list
 import com.raizlabs.android.dbflow.kotlinextensions.select
-import khronos.Dates
 import kotlinx.android.synthetic.main.home_fragment.*
 import novajox.io.healthfit.R
 import novajox.io.healthfit.core.fragment.BaseFragment
@@ -46,9 +45,6 @@ class HomeFragment : BaseFragment() {
         initXAxis()
         initYAxis()
 
-        val today = Dates.today
-        var day = today
-
         val results = (select.from(Record::class.java)).list
         // can call .result for single result
         // .hasData if it has results
@@ -60,11 +56,12 @@ class HomeFragment : BaseFragment() {
             muscleMass.add(Entry(date, record.muscleMass))
             fatMass.add(Entry(date, record.fatMass))
         }
-
-        addData(totalMass, "Poids", android.R.color.black)
-        addData(waterMass, "Eau", android.R.color.holo_blue_dark)
-        addData(muscleMass, "Muscle", R.color.colorAccent)
-        addData(fatMass, "Graisse", android.R.color.holo_red_light)
+        if (!results.isEmpty()) {
+            addData(totalMass, "Poids", android.R.color.black)
+            addData(waterMass, "Eau", android.R.color.holo_blue_dark)
+            addData(muscleMass, "Muscle", R.color.colorAccent)
+            addData(fatMass, "Graisse", android.R.color.holo_red_light)
+        }
     }
 
 

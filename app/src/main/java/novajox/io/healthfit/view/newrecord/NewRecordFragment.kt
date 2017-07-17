@@ -34,7 +34,7 @@ class NewRecordFragment : BottomBaseFragment() {
         val waterMass = newRecordWaterMass.text.toString().toFloat()
 
         val record = Record()
-        record.date = Dates.today.time;
+        record.date=Dates.today.time
         record.totalMass = totalMass
         record.fatMass = fatMass
         record.muscleMass = muscleMass
