@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 25
@@ -43,7 +42,6 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
 
     // use kapt for kotlin apt if you're a Kotlin user
     kapt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
@@ -51,12 +49,7 @@ dependencies {
     implementation "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     implementation "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
     // kotlin extensions
-    compile "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
-    // RXJava 2 support
-    compile "com.github.Raizlabs.DBFlow:dbflow-rx2:${dbflow_version}"
-
-    // RXJava 2 Kotlin Extensions Support
-    compile "com.github.Raizlabs.DBFlow:dbflow-rx2-kotlinextensions:${dbflow_version}"
+    implementation "com.github.Raizlabs.DBFlow:dbflow-kotlinextensions:${dbflow_version}"
 
     implementation 'com.github.hotchemi:khronos:0.9.0'
 

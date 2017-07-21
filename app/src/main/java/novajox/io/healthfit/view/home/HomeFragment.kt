@@ -30,6 +30,7 @@ class HomeFragment : BaseFragment() {
     val waterMass = arrayListOf<Entry>()
     val muscleMass = arrayListOf<Entry>()
     val fatMass = arrayListOf<Entry>()
+    val dataSets = ArrayList<ILineDataSet>()
 
     override val layout: Int
         get() = R.layout.home_fragment
@@ -93,12 +94,10 @@ class HomeFragment : BaseFragment() {
     }
 
     fun addData(entry: List<Entry>, title: String, color: Int) {
-        var lineDataSet = LineDataSet(entry, title)
+        val lineDataSet = LineDataSet(entry, title)
         lineDataSet.setDrawCircles(true)
         lineDataSet.color = color
 
-
-        val dataSets = ArrayList<ILineDataSet>()
         dataSets.add(lineDataSet)
 
         val data = LineData(dataSets)

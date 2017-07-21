@@ -1,6 +1,7 @@
 package novajox.io.healthfit
 
 import android.app.Application
+import com.raizlabs.android.dbflow.config.FlowConfig
 import com.raizlabs.android.dbflow.config.FlowManager
 
 
@@ -11,6 +12,11 @@ class HealthFitApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        FlowManager.init(this)
+        FlowManager.init(FlowConfig.Builder(this).build())
+    }
+
+    override fun onTerminate() {
+        super.onTerminate()
+        FlowManager.destroy()
     }
 }
