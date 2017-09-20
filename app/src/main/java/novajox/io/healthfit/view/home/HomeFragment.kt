@@ -45,16 +45,22 @@ class HomeFragment : BaseFragment() {
         initXAxis()
         initYAxis()
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         val results = (select.from(Record::class.java)).list
         // can call .result for single result
         // .hasData if it has results
         // .statement for a compiled statement
         for (record in results) {
-            val date = record.date.toFloat()
-            totalMass.add(Entry(date, record.totalMass))
-            waterMass.add(Entry(date, record.waterMass))
-            muscleMass.add(Entry(date, record.muscleMass))
-            fatMass.add(Entry(date, record.fatMass))
+            val date = record.date?.toFloat()
+            totalMass.add(Entry(date!!, record.totalMass!!))
+            waterMass.add(Entry(date, record.waterMass!!))
+            muscleMass.add(Entry(date, record.muscleMass!!))
+            fatMass.add(Entry(date, record.fatMass!!))
         }
         if (!results.isEmpty()) {
             addData(totalMass, "Poids", android.R.color.black)
@@ -63,8 +69,6 @@ class HomeFragment : BaseFragment() {
             addData(fatMass, "Graisse", android.R.color.holo_red_light)
         }
     }
-
-
     private fun initXAxis() {
         val xAxisFormatter = DayAxisValueFormatter()
 

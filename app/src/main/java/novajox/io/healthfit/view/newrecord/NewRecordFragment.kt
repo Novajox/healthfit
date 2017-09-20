@@ -41,5 +41,6 @@ class NewRecordFragment : BottomBaseFragment() {
         record.waterMass = waterMass
 
         record.save()
+        dismiss()
     }
 }
