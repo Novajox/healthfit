@@ -9,21 +9,20 @@ import com.raizlabs.android.dbflow.structure.BaseModel
  * Created by Jocelyn on 16/07/2017.
  */
 @Table(database = AppDatabase::class)
-class Record : BaseModel {
+class Record : BaseModel() {
 
     @PrimaryKey(autoincrement = true)
-    var id: Int? = null
     @Column
-    var date: Long? = null
-    @Column
-    var totalMass: Float? = null
-    @Column
-    var fatMass: Float? = null
-    @Column
-    var muscleMass: Float? = null
-    @Column
-    var waterMass: Float? = null
+    var id: Int? = 0
 
-    constructor() {}
-
+    @Column
+    var date: Long = 0
+    @Column
+    var totalMass: Float = 0f
+    @Column
+    var fatMass: Float = 0f
+    @Column
+    var muscleMass: Float = 0f
+    @Column
+    var waterMass: Float = 0f
 }

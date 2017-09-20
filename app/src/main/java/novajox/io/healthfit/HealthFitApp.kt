@@ -18,4 +18,9 @@ class HealthFitApp : Application() {
         val databaseConfig = DatabaseConfig.Builder(AppDatabase::class.java).modelNotifier(DirectModelNotifier.get()).build()
         FlowManager.init(FlowConfig.Builder(this).addDatabaseConfig(databaseConfig).build())
     }
+    override fun onTerminate() {
+
+        super.onTerminate()
+        FlowManager.destroy()
+    }
 }

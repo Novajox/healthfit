@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Poids (kg)"
+                android:text="65"
                 android:inputType="numberDecimal"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
@@ -39,6 +40,7 @@
                 android:id="@+id/newRecordMuscleMass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="40"
                 android:hint="Masse musculaire (en %)"
                 android:inputType="numberDecimal"
                 android:maxLines="1" />
@@ -52,6 +54,7 @@
                 android:id="@+id/newRecordFatMass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="10"
                 android:hint="Masse graisseuse (en %)"
                 android:inputType="numberDecimal"
                 android:maxLines="1" />
@@ -67,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Masse d'eau (en %)"
                 android:inputType="numberDecimal"
+                android:text="50"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
 
